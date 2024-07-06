@@ -17,7 +17,7 @@ namespace Entities.Notificacoes
         [NotMapped]
         public List<Notification> notificacoes;
 
-        public bool ValidarPRopriedadeString(string valor, string nomePropriedade)
+        public bool ValidarPropriedadeString(string valor, string nomePropriedade)
         {
             if (string.IsNullOrWhiteSpace(nomePropriedade) || string.IsNullOrWhiteSpace(valor))
             {

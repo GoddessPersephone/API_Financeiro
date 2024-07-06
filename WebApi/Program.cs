@@ -1,8 +1,10 @@
 using Domain.Interfaces.Generics;
 using Domain.Interfaces.ICategoria;
 using Domain.Interfaces.IDespesa;
+using Domain.Interfaces.InterfaceServicos;
 using Domain.Interfaces.ISistemaFinaceiro;
 using Domain.Interfaces.IUsuarioSistemaFinaceiro;
+using Domain.Servicos;
 using Entities.Entidades;
 using Infra.Configuracao;
 using Infra.Repositorio;
@@ -22,12 +24,21 @@ builder.Services.AddDbContext<ContextBase>(options => options.UseSqlServer(
                                            builder.Configuration.GetConnectionString("DefaultConection")));
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ContextBase>();
 
-//Interface do Repositorio
+//INTERFACE E REPOSITORIO
 builder.Services.AddSingleton(typeof(InterfaceGeneric<>), typeof(RepositorioGenerics<>));
 builder.Services.AddSingleton<InterfaceCategoria, RepositorioCategoria>();
 builder.Services.AddSingleton<InterfaceDespesa, RepositorioDespesa>();
 builder.Services.AddSingleton<InterfaceUsuarioSistemaFinanceiro, RepositorioUsusarioSistemaFinanceiro>();
 builder.Services.AddSingleton<InterfaceSistemaFinanceiro, RepositorioSistemaFinanceiro>();
+
+//SERVICO DOMINIO
+builder.Services.AddSingleton<ICategoriaServico, CategoriaServico>();
+builder.Services.AddSingleton<IDespesaServico, DespesaServico>();
+builder.Services.AddSingleton<ISistemaFinanceiroServico, SistemaFinanceiroServico>();
+builder.Services.AddSingleton<IUsuarioSistemaFinanceiroServico, UsuarioSistemaFinanceiroServico>();
+
+
+
 
 var app = builder.Build();
 

@@ -8,6 +8,6 @@ namespace Entities.Entidades
         [Display(Name = "Código")]
         public int Id { get; set; }
         [Display(Name = "Nome")]
-        public string Name { get; set; }
+        public string Nome { get; set; }
     }
 }
