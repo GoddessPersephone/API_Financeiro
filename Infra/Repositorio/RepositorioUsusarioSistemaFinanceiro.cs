@@ -1,24 +1,45 @@
 ﻿using Domain.Interfaces.IUsuarioSistemaFinaceiro;
 using Entities.Entidades;
+using Infra.Configuracao;
 using Infra.Repositorio.Generics;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Repositorio
 {
     public class RepositorioUsusarioSistemaFinanceiro : RepositorioGenerics<UsuarioSistemaFinanceiro>, InterfaceUsuarioSistemaFinanceiro
     {
-        public Task<IList<UsuarioSistemaFinanceiro>> ListarSistemasUsuaruio(int idSistema)
+        private readonly DbContextOptions<ContextBase> _optionsBuilder;
+        public RepositorioUsusarioSistemaFinanceiro()
         {
-            throw new NotImplementedException();
+            _optionsBuilder = new DbContextOptions<ContextBase>();
+        }
+        public async Task<IList<UsuarioSistemaFinanceiro>> ListarSistemasUsuaruio(int idSistema)
+        {
+            using (var banco = new ContextBase(_optionsBuilder))
+            {
+                return await
+                     banco.TabelaUsuarioSistemaFinanceiro
+                    .Where(s => s.IdSistema == idSistema).AsNoTracking().ToListAsync();
+            }
         }
 
-        public Task<UsuarioSistemaFinanceiro> ObterUsuaruioPorEmail(string emailUsuaruio)
+        public async Task<UsuarioSistemaFinanceiro> ObterUsuaruioPorEmail(string emailUsuaruio)
         {
-            throw new NotImplementedException();
+            using (var banco = new ContextBase(_optionsBuilder))
+            {
+                return await
+                     banco.TabelaUsuarioSistemaFinanceiro.AsNoTracking().FirstOrDefaultAsync(x => x.EmailUsuario.Equals(emailUsuaruio));
+            }
         }
 
-        public Task RemoverUsuarios(List<UsuarioSistemaFinanceiro> usuarios)
+        public async Task RemoverUsuarios(List<UsuarioSistemaFinanceiro> usuarios)
         {
-            throw new NotImplementedException();
+            using (var banco = new ContextBase(_optionsBuilder))
+            {
+                banco.TabelaUsuarioSistemaFinanceiro
+               .RemoveRange(usuarios);
+                await banco.SaveChangesAsync();
+            }
         }
     }
 }

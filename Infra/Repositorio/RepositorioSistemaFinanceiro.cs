@@ -13,9 +13,16 @@ namespace Infra.Repositorio
         {
             _optionsBuilder = new DbContextOptions<ContextBase>();
         }
-        public Task<IList<SistemaFinanceiro>> ListarSistemasUsuaruio(string emailUsuaruio)
+        public async Task<IList<SistemaFinanceiro>> ListarSistemasUsuaruio(string emailUsuaruio)
         {
-            throw new NotImplementedException();
+            using (var banco = new ContextBase(_optionsBuilder))
+            {
+                return await
+                    (from s in banco.TabelaSistemaFinanceiro
+                     join us in banco.TabelaUsuarioSistemaFinanceiro on s.Id equals us.IdSistema
+                     where us.EmailUsuario.Equals(emailUsuaruio)
+                     select s).AsNoTracking().ToListAsync();
+            }
         }
     }
 }
