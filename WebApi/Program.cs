@@ -38,6 +38,12 @@ builder.Services.AddSingleton<ISistemaFinanceiroServico, SistemaFinanceiroServic
 builder.Services.AddSingleton<IUsuarioSistemaFinanceiroServico, UsuarioSistemaFinanceiroServico>();
 
 
+//AUTHENTICATION
+
+
+
+
+
 
 
 var app = builder.Build();
