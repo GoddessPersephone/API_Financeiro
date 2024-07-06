@@ -1,0 +1,12 @@
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\bin\Debug\net7.0\Helpers.deps.json
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\bin\Debug\net7.0\Helpers.dll
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\bin\Debug\net7.0\Helpers.pdb
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.csproj.AssemblyReference.cache
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.AssemblyInfoInputs.cache
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.AssemblyInfo.cs
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.csproj.CoreCompileInputs.cache
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.dll
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\refint\Helpers.dll
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\Helpers.pdb
+C:\Curriculo\Portifolio\Angular\API-ProjetoFinanceiro\API_Financeiro\Helpers\obj\Debug\net7.0\ref\Helpers.dll
